@@ -26,6 +26,10 @@
 
  */
 
+#ifdef __ANDROID__
+   #include "android-ashmem.h"
+#endif
+
 #include <sys/shm.h>
 #include "../../config.h"
 
