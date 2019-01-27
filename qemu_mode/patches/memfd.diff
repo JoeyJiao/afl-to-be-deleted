@@ -1,0 +1,13 @@
+diff --git a/util/memfd.c b/util/memfd.c
+index 4571d1ab..d9c1657c 100644
+--- a/util/memfd.c
++++ b/util/memfd.c
+@@ -37,7 +37,7 @@
+ #include <sys/syscall.h>
+ #include <asm/unistd.h>
+ 
+-static int memfd_create(const char *name, unsigned int flags)
++int memfd_create(const char *name, unsigned int flags)
+ {
+ #ifdef __NR_memfd_create
+     return syscall(__NR_memfd_create, name, flags);
