@@ -56,7 +56,7 @@ if [ ! -f "../afl-showmap" ]; then
 fi
 
 
-for i in libtool wget python automake autoconf sha384sum bison iconv; do
+for i in libtoolize wget python automake autoconf sha384sum bison iconv; do
 
   T=`which "$i" 2>/dev/null`
 
@@ -131,6 +131,7 @@ echo "[*] Applying patches..."
 patch -p1 <../patches/elfload.diff || exit 1
 patch -p1 <../patches/cpu-exec.diff || exit 1
 patch -p1 <../patches/syscall.diff || exit 1
+patch -p1 <../patches/memfd.diff || exit 1
 
 echo "[+] Patching done."
 

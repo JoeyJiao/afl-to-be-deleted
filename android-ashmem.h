@@ -2,8 +2,9 @@
 #define _ANDROID_ASHMEM_H
 
 #include <fcntl.h>
+#include <sys/types.h>
 #include <linux/shm.h>
-#include <linux/ashmem.h>
+#include "linux/ashmem.h"
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 
@@ -13,7 +14,7 @@
 #define shmdt bionic_shmdt
 #define shmget bionic_shmget
 #endif
- #include <sys/shm.h>
+
 #undef shmat
 #undef shmctl
 #undef shmdt
