@@ -7038,6 +7038,7 @@ static void check_term_size(void) {
 
   if (ioctl(1, TIOCGWINSZ, &ws)) return;
 
+  if (ws.ws_row == 0 && ws.ws_col == 0) return;
   if (ws.ws_row < 25 || ws.ws_col < 80) term_too_small = 1;
 
 }
